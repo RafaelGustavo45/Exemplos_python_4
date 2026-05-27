@@ -7,16 +7,50 @@ leituras_brutas = [23, 45, -1, 67, 105, 34, 89, -1, 56, 78]
 # 1. Filtre apenas leituras válidas (0 <= valor <= 100) usando list comprehension
 # Sua solução aqui:
 
+leituras=[]
+
+for v in leituras_brutas:
+    if 0 <= v <= 100:
+        leituras.append(v)
+
 
 # 2. Calcule a média das leituras válidas (use sum() e len())
 # Sua solução aqui:
+
+s=0
+q=0
+
+for v in leituras:
+  s = s+v
+  q = q+1
+
+media = s/q
+
+print("media", media)
 
 
 # 3. Classifique cada leitura válida como "Baixa" (<40), "Média" (40-70) ou "Alta" (>70)
 # Use conditional expression dentro de uma comprehension
 # Sua solução aqui:
 
+classes=[]
+
+for v in leituras:
+    if v < 40:
+        classes.append("Baixa")
+    elif v <= 70:
+        classes.append("Media")
+    else:
+        classes.append("Alta")
+
+print("leituras: ", leituras)
+print("classes: ", classes)
+
 
 # 4. BÔNUS: Crie uma lista de tuplas (valor, classificação) apenas para leituras > 50
 # Exemplo de saída: [(67, "Média"), (89, "Alta"), (56, "Média"), (78, "Alta")]
 # Sua solução aqui:
+
+tuplado = list(zip(leituras, classes))
+
+print("Em tuplas", tuplado)
